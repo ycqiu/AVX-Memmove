@@ -1,4 +1,4 @@
-# AVX-Memmove
+# AVX Memmove
 Highly optimized versions of memmove, memcpy, memset, and memcmp supporting SSE4.2, AVX, AVX2, and AVX512.  
   
 This is an effort to make the fastest possible versions for AVX2+ supporting systems, so if you see a way to make any of them better (for any data size, not just big ones), please post in "Issues" or make a pull request. *NOTE: SSE4.2 support is mainly implemented as a fallback, as not all AVX functions used are available in AVX1 (meaning Intel Sandy Bridge and Ivy Bridge systems need the SSE4.2 stuff).*
