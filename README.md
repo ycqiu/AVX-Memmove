@@ -3,7 +3,7 @@ Highly optimized versions of memmove, memcpy, memset, and memcmp supporting SSE4
   
 This is an effort to make the fastest possible versions for AVX2+ supporting systems, so if you see a way to make any of them better (for any data size, not just big ones), please post in "Issues" or make a pull request. *NOTE: SSE4.2 support is mainly implemented as a fallback, as not all AVX functions used are available in AVX1 (meaning Intel Sandy Bridge and Ivy Bridge systems need the SSE4.2 stuff).*
   
-At the moment, AVX_memmove currently beats GCC -O3 optimized regular memmove at sizes >1024 bytes with aligned destinations. It also beats some similarly optimized memcpy implementations at 4096 and 8192 bytes with aligned destinations.
+At the moment, AVX_memmove currently beats GCC -O3 optimized (and vectorized) regular memmove at sizes >1024 bytes with aligned destinations. It also beats some similarly optimized memcpy implementations at 4096 and 8192 bytes with aligned destinations.
   
 These are the same files used in https://github.com/KNNSpeed/Simple-Kernel, so they have been primarily designed to operate in a freestanding (no-OS) x86-64 environment. They also work in a regular OS environment just fine. :)
   
