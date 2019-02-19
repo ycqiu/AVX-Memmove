@@ -26,3 +26,9 @@ Please see the LICENSE file for the complete terms and further information.
 ***TL;DR:***  
 
 If you don't give credit to this project, per the license you aren't allowed to use any part of it. That's pretty much it, and why it's "almost" PD, or "PD with Credit" if I have to give it a nickname (I don't care what it gets used for as long as the license is satisfied). Note that each of these files already has appropriate crediting at the top, so you could just leave what's already there to satisfy the terms. You really should see the license file for complete information, though (it's short!!).  
+
+## Acknowledgements  
+
+- [The Data Plane Development Kit project](https://www.dpdk.org/about/) for open-source examples of various really useful optimizations.
+- [Agner Fog](https://www.agner.org/) for [amazing software optimization resources](https://www.agner.org/optimize/).
+- Users [Peter Cordes](https://stackoverflow.com/users/224132/peter-cordes) and [BeeOnRope](https://stackoverflow.com/users/149138/beeonrope) on StackOverflow for incredibly detailed answers to questions about x86, which were very helpful to come across when researching x86 optimization. [(Like this one.)](https://stackoverflow.com/questions/4537753/when-should-i-use-mm-sfence-mm-lfence-and-mm-mfence/50780314#50780314)
