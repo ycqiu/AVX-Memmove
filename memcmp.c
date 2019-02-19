@@ -39,7 +39,7 @@ int memcmp_eq (const void *str1, const void *str2, size_t count)
 //
 // The code above this comment is in the public domain.
 // The code below this comment is subject to the custom attribution license found
-// here: https://github.com/KNNSpeed/Simple-Kernel/blob/master/LICENSE_KERNEL
+// here: https://github.com/KNNSpeed/AVX-Memmove/blob/master/LICENSE
 //
 //==============================================================================
 //  AVX Memory Functions: AVX Memcmp
@@ -51,7 +51,7 @@ int memcmp_eq (const void *str1, const void *str2, size_t count)
 //  KNNSpeed
 //
 // Source Code:
-//  https://github.com/KNNSpeed/Simple-Kernel
+//  https://github.com/KNNSpeed/AVX-Memmove
 //
 // Minimum requirement:
 //  x86_64 CPU with SSE4.2, but AVX2 or later is recommended

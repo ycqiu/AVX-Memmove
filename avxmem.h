@@ -8,7 +8,7 @@
 //  KNNSpeed
 //
 // Source Code:
-//  https://github.com/KNNSpeed/Simple-Kernel
+//  https://github.com/KNNSpeed/AVX-Memmove
 //
 // Minimum requirement:
 //  x86_64 CPU with SSE4.2, but AVX2 or later is *highly* recommended
