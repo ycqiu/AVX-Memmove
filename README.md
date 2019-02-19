@@ -29,6 +29,7 @@ If you don't give credit to this project, per the license you aren't allowed to 
 
 ## Acknowledgements  
 
+- [Intel Corporation](https://www.intel.com/content/www/us/en/homepage.html) for publishing [software optimization manuals and architecture programming references](https://software.intel.com/en-us/articles/intel-sdm). 
 - [The Data Plane Development Kit project](https://www.dpdk.org/about/) for open-source examples of various really useful optimizations.
 - [Agner Fog](https://www.agner.org/) for [amazing software optimization resources](https://www.agner.org/optimize/).
 - Users [Peter Cordes](https://stackoverflow.com/users/224132/peter-cordes) and [BeeOnRope](https://stackoverflow.com/users/149138/beeonrope) on StackOverflow for incredibly detailed answers to questions about x86, which were very helpful to come across when researching x86 optimization. [(Like this one.)](https://stackoverflow.com/questions/4537753/when-should-i-use-mm-sfence-mm-lfence-and-mm-mfence/50780314#50780314)
