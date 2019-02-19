@@ -13,7 +13,9 @@ These are the same files used in https://github.com/KNNSpeed/Simple-Kernel, so t
 **Mac:** Mac OS Sierra or later with the latest XCode Command Line Tools for the OS  
 **Linux:** GCC 8.0.0 or later and Binutils 2.29.1 or later  
 
-Compile and cleanup scripts are provided for Linux, Windows, and Mac, but you'll need to supply your own C file with main() and modify the compile script to add it to the linker line. You may also need to modify the GCC/clang folder location in the script for your system.
+Compile and cleanup scripts are provided for Linux, Windows, and Mac, but you'll need to supply your own C file with main() and modify the compile script to add it to the linker line. You may also need to modify the GCC/clang folder location in the script for your system. 
+
+To use them, just run the scripts from the same folder that the .h & .c files are in. That's it! You'll get an executable file called Output.(exe/elf/mach64) in the same folder.
 
 See https://github.com/KNNSpeed/Simple-Kernel for how to make portable GCC 8+ installs on Windows and Linux. MacOS just uses the built-in clang. However, if you have a Linux version with GCC 8+ built-in already (run "gcc --version" in terminal to check), then you just need to modify Compiler.sh to point to it.
   
