@@ -25,7 +25,9 @@ Please see the LICENSE file for the complete terms and further information.
   
 ***TL;DR:***  
 
-If you don't give credit to this project, per the license you aren't allowed to use any part of it. That's pretty much it, and why it's "almost" PD, or "PD with Credit" if I have to give it a nickname (I don't care what it gets used for as long as the license is satisfied). Note that each of these files already has appropriate crediting at the top, so you could just leave what's already there to satisfy the terms. You really should see the license file for complete information, though (it's short!!).  
+If you don't give credit to this project, per the license you aren't allowed to do anything with any of its source code that isn't already covered by an existing license (in other words, my license covers most of the code I wrote). That's pretty much it, and why it's "almost" PD, or "PD with Credit" if I have to give it a nickname, as there's no restriction on what it gets used for as long as the license is satisfied. If you have any issues, feature requests, etc. please post in "Issues" so it can be attended to/fixed.  
+
+Note that many of these files already have appropriate crediting inside, so you could just leave what's already there to satisfy the terms for those files. You really should see the license file for complete information, though (it's short!!).  
 
 ## Acknowledgements  
 
