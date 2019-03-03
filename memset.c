@@ -26,7 +26,7 @@ void * memset (void *dest, const uint8_t val, size_t len)
 //  AVX Memory Functions: AVX Memset
 //==============================================================================
 //
-// Version 1.3
+// Version 1.4
 //
 // Author:
 //  KNNSpeed
@@ -2988,7 +2988,9 @@ void * AVX_memset(void *dest, const uint8_t val, size_t numbytes)
   }
   else
   {
-    size_t numbytes_to_align = (uintptr_t)dest & BYTE_ALIGNMENT;
+    size_t numbytes_to_align = (BYTE_ALIGNMENT + 1) - ((uintptr_t)dest & BYTE_ALIGNMENT);
+
+    void * destoffset = (char*)dest + numbytes_to_align;
 
     if(val == 0)
     {
@@ -2999,15 +3001,14 @@ void * AVX_memset(void *dest, const uint8_t val, size_t numbytes)
         // alignment doesn't matter. Worst case it uses two vector functions, and
         // this process only needs to be done once per call if dest is unaligned.
         memset_zeroes(dest, numbytes_to_align);
-        dest = (char*)dest + numbytes_to_align;
         // Now this should be near the fastest possible since stores are aligned.
         if((numbytes - numbytes_to_align) > CACHESIZELIMIT)
         {
-          memset_zeroes_as(dest, numbytes - numbytes_to_align);
+          memset_zeroes_as(destoffset, numbytes - numbytes_to_align);
         }
         else
         {
-          memset_zeroes_a(dest, numbytes - numbytes_to_align);
+          memset_zeroes_a(destoffset, numbytes - numbytes_to_align);
         }
       }
       else // Small size
@@ -3024,15 +3025,14 @@ void * AVX_memset(void *dest, const uint8_t val, size_t numbytes)
         // alignment doesn't matter. Worst case it uses two vector functions, and
         // this process only needs to be done once per call if dest is unaligned.
         memset_large(dest, val, numbytes_to_align);
-        dest = (char*)dest + numbytes_to_align;
         // Now this should be near the fastest possible since stores are aligned.
         if((numbytes - numbytes_to_align) > CACHESIZELIMIT)
         {
-          memset_large_as(dest, val, numbytes - numbytes_to_align);
+          memset_large_as(destoffset, val, numbytes - numbytes_to_align);
         }
         else
         {
-          memset_large_a(dest, val, numbytes - numbytes_to_align);
+          memset_large_a(destoffset, val, numbytes - numbytes_to_align);
         }
       }
       else // Small size
@@ -3068,27 +3068,27 @@ void * AVX_memset_4B(void *dest, const uint32_t val, size_t numbytes_div_4)
   }
   else
   {
-    size_t numbytes_to_align = (uintptr_t)dest & BYTE_ALIGNMENT;
+    size_t numbytes_to_align = (BYTE_ALIGNMENT + 1) - ((uintptr_t)dest & BYTE_ALIGNMENT);
     if(numbytes_to_align & 0x03) // Sanity check, return NULL if not alignable in 4B increments
     {
       return NULL;
     }
+    void * destoffset = (char*)dest + numbytes_to_align;
 
     if(numbytes_div_4 > (numbytes_to_align >> 2))
     {
       // Get to an aligned position.
       // This process only needs to be done once per call if dest is unaligned.
       memset_large_4B(dest, val, numbytes_to_align >> 2);
-      dest = (char*)dest + numbytes_to_align;
       // Now this should be near the fastest possible since stores are aligned.
       // ...and in memset there are only stores.
       if((numbytes_div_4 * 4 - numbytes_to_align) > CACHESIZELIMIT)
       {
-        memset_large_4B_as(dest, val, numbytes_div_4 - (numbytes_to_align >> 2));
+        memset_large_4B_as(destoffset, val, numbytes_div_4 - (numbytes_to_align >> 2));
       }
       else
       {
-        memset_large_4B_a(dest, val, numbytes_div_4 - (numbytes_to_align >> 2));
+        memset_large_4B_a(destoffset, val, numbytes_div_4 - (numbytes_to_align >> 2));
       }
     }
     else // Small size

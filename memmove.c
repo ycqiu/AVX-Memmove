@@ -40,7 +40,7 @@ void * memmove (void *dest, const void *src, size_t len)
 //  AVX Memory Functions: AVX Memmove
 //==============================================================================
 //
-// Version 1.3
+// Version 1.4
 //
 // Author:
 //  KNNSpeed
@@ -4027,7 +4027,7 @@ void * AVX_memmove(void *dest, void *src, size_t numbytes)
   }
   else // Unaligned
   {
-    size_t numbytes_to_align = (uintptr_t)dest & BYTE_ALIGNMENT;
+    size_t numbytes_to_align = (BYTE_ALIGNMENT + 1) - ((uintptr_t)dest & BYTE_ALIGNMENT);
 
     void * destoffset = (char*)dest + numbytes_to_align;
     void * srcoffset = (char*)src + numbytes_to_align;

@@ -730,7 +730,7 @@ int memcmp_large(const void *str1, const void *str2, size_t numbytes) // Worst-c
   size_t offset = 0;
 
   while(numbytes)
-  // This loop will, at most, get evaulated 7 times, ending sooner each time.
+  // This loop will, at most, get evaluated 7 times, ending sooner each time.
   // At minimum non-trivial case, once. Each memcmp has its own loop.
   {
     if(numbytes < 2) // 1 byte
